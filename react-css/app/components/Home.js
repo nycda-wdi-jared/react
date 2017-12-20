@@ -16,10 +16,9 @@ var Home = React.createClass({
   render: function() {
     return (
         <div id="test" className="container-fluid">
-          {/* Landing Page */}
+          {/* Find the javascript in here */}
           <h1>Hello World</h1>
           <img src="./images/puppy.jpg" onMouseOver={() => this.setState({opacity: 0})} style={{opacity: this.state.opacity, transition: "opacity 2s"}}/>
-          {/* End Container */}
         </div>
     );
   }
