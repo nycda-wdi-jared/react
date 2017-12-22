@@ -1,5 +1,13 @@
 # Example React App
 
+<h2> Routing </h2>
+
+* As you see in the routes.js file, all of the front-end/ui routing is done from the client side
+* This is where you define your routes that people will be able view and direct through the website
+* The back-end routes are merely for sending and receiving data. We will get to that soon.
+
+<h2> Installation </h2>
+
 1. Look at how the dots connect through the folder structure
 2. You see how we use ```import``` instead of ```require```, that's babel at work
 	* https://babeljs.io/
