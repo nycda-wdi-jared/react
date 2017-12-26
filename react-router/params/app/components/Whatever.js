@@ -1,14 +1,13 @@
-// Include React
-var React = require("react");
+import React, { Component } from 'react';
+import HomeButton from './HomeButton';
 
-var Whatever = React.createClass({
-  render: function() {
-    return (
-        <div>
-          <h1>Whatever Page</h1>
-        </div>
-    );
-  }
-});
-
-module.exports = Whatever;
+export default class Profile extends Component {
+  	render() {
+	    return (
+	        <div>
+	        	<HomeButton />
+	          	<h1>Whatever Page</h1>
+	        </div>
+	    );
+  	}
+};
