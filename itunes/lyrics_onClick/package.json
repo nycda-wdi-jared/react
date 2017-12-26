@@ -4,13 +4,8 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack & node server",
-    "start": "nodemon server/server.js",
-    "build": "webpack"
+    "start": "node server"
   },
-  "author": "Ahmed Haque",
-  "license": "ISC",
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
     "bcryptjs": "^2.4.3",

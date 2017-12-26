@@ -31,7 +31,6 @@ var Home = React.createClass({
                 <h2>Create Account</h2>
               </div>
               <div>
-                <h4 className="uploadImageText">Upload Profile Image</h4>
                 <div>
                   <span className="glyphicon glyphicon-sunglasses"><input type="text" ref="name" placeholder="Enter Name/Nickname"/></span>
                 </div>
