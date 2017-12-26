@@ -1,10 +1,10 @@
 {
-  "name": "react-itunes-homepage",
+  "name": "react-guestbook",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server"
+    "start": "nodemon server/server.js"
   },
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
