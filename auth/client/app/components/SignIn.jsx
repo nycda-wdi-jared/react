@@ -21,25 +21,30 @@ export default class SignIn extends Component {
 			},
 			credentials: 'include'
         }).then((response) => {
-        	// if(!results.success){
-        	// 	if(results.info.message === "incorrect password"){
-        	// 		alert("Incorrect Password for User")
-        	// 	} else if (results.info.message === "no user"){
-        	// 		alert("No User with that Username")
-        	// 	}
-        	// } else {
-                console.log(response)
+            if(response.status == 401){
+                alert("Login Failed for Username and/or Password")
+            } else {
                 localStorage.setItem('token', response.headers.get('Auth'));
-        		browserHistory.push("/home")
-        	// }
+                browserHistory.push("/home")
+            }
         });
     }
 	componentWillMount(){
-        // fetch('/api/signed-in', {
-        // }).then((response) => response.json())
-        // .then((results) => {
-        // 	console.log(results)
-        // });
+        fetch('/api/signed-in', {
+            headers: {
+                Auth: localStorage.getItem('token'),
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'include'
+        }).then((response) => response.json())
+        .then((results) => {
+            if(results.message){
+                if(results.message !== "unauthorized"){
+                    browserHistory.push("/home")
+                }
+            }
+        });
 	}
   	render() {
 	    return (

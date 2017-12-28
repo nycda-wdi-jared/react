@@ -51,16 +51,16 @@ router.post('/api/login', function(req,res,next){
 });
 
 router.get('/api/signed-in', middleware.requireAuthentication, (req,res) => {
-  console.log(req.user)
   if(req.user){
-    res.json({message: 'signed-in', user_id: req.user.id});
+    res.json({message: 'signed-in', user: req.user});
   }
-})
+});
 
-
-router.delete('/api/logout-user', function (req, res) {
-  req.session.destroy(function(out){
-    res.json(out)
+router.delete('/api/logout', middleware.requireAuthentication, function (req, res) {
+  req.token.destroy().then(function () {
+    res.status(204).send();
+  }).catch(function () {
+    res.status(500).send();
   });
 });
 

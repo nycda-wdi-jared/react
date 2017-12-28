@@ -26,7 +26,8 @@ module.exports = function () {
 				req.user = user;
 				next();
 			}).catch(function () {
-				res.status(401).send();
+				res.json({message: "unauthorized"})
+				// res.status(401).send();
 			});
 		}
 	};
