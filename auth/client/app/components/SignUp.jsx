@@ -28,6 +28,21 @@ export default class SignUp extends Component {
         });
     }
 	componentWillMount(){
+        fetch('/api/signed-in', {
+            headers: {
+                Auth: localStorage.getItem('token'),
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'include'
+        }).then((response) => response.json())
+        .then((results) => {
+            if(results.message){
+                if(results.message !== "unauthorized"){
+                    browserHistory.push("/home")
+                }
+            }
+        });
 	}
   	render() {
 	    return (
