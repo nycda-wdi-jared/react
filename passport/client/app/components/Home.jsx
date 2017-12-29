@@ -31,16 +31,16 @@ export default class Home extends Component {
   		const renderLinks = () => {
   			if(this.state.signedIn){
   				return (
-		       		<nav className="navbar navbar-light bg-faded">
-						<Link className="nav-links" to="/home">Profile</Link>
-					</nav>
+  		      <nav className="navbar navbar-light bg-faded">
+  						<Link className="nav-links" to="/home">Profile</Link>
+  					</nav>
   				)
   			} else {
   				return (
-		       		<nav className="navbar navbar-light bg-faded">
-						<Link className="nav-links" to="/sign-up">Sign Up</Link>
-						<Link className="nav-links" to="/login">Login</Link>
-					</nav>
+  		      <nav className="navbar navbar-light bg-faded">
+  						<Link className="nav-links" to="/sign-up">Sign Up</Link>
+  						<Link className="nav-links" to="/login">Login</Link>
+  					</nav>
   				)
   			}
   		}
