@@ -15,16 +15,16 @@ export default class Home extends Component {
                 'content-type': 'application/json',
                 'accept': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'same-origin'
         }).then((response) => response.json())
         .then((results) => {
-            // if(results.message){
-            //     if(results.message !== "unauthorized"){
-            //         this.setState({
-            //         	signedIn: true
-            //         })
-            //     }
-            // }
+            if(results.message){
+                if(results.message === "signed-in"){
+                    this.setState({
+                    	signedIn: true
+                    })
+                }
+            }
         });
 	}
   	render() {
@@ -47,7 +47,7 @@ export default class Home extends Component {
 	    return (
 	        <div>
 	        	{renderLinks()}
-				<div className="text-center">
+				    <div className="text-center">
 		        	<h1>Hello Passport</h1>
 		        	<h2>Please Sign up or Sign in</h2>
 		        </div>

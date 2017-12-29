@@ -21,7 +21,7 @@ export default class SignUp extends Component {
                 'content-type': 'application/json',
                 'accept': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'same-origin'
         }).then((response) => response.json())
         .then((results) => {
         	browserHistory.push("/login");
@@ -33,7 +33,7 @@ export default class SignUp extends Component {
                 'content-type': 'application/json',
                 'accept': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'same-origin'
         }).then((response) => response.json())
         .then((results) => {
             if(results.message){
