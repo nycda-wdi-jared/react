@@ -13,31 +13,34 @@ export default class SignIn extends Component {
     		username: this.refs.username.value,
     		password: this.refs.password.value
     	}
-        fetch('/api/login', {
-            method: 'POST',
+        fetch('/api/sign-in', {
+            method: 'post',
             body: JSON.stringify(signInUser),
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			credentials: 'include'
-        }).then((response) => response.json())
-        .then((results) => {
-        	if(!results.success){
-        		if(results.info.message === "incorrect password"){
-        			alert("Incorrect Password for User")
-        		} else if (results.info.message === "no user"){
-        			alert("No User with that Username")
-        		}
-        	} else {
-        		browserHistory.push("/home")
-        	}
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'same-origin'
+        }).then((response) => {
+            if(response.status == 401){
+                alert("Login Failed for Username and/or Password")
+            } else {
+                browserHistory.push("/home")
+            }
         });
     }
 	componentWillMount(){
         fetch('/api/signed-in', {
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'same-origin'
         }).then((response) => response.json())
         .then((results) => {
-        	console.log(results)
+            if(results.message === "signed-in"){
+                browserHistory.push("/home")
+            }
         });
 	}
   	render() {

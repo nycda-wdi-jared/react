@@ -14,7 +14,6 @@ export default class SignUp extends Component {
     		username: this.refs.username.value,
     		password: this.refs.password.value
     	}
-        console.log(newUser)
         fetch('/api/sign-up', {
             method: 'post',
             body: JSON.stringify(newUser),
@@ -25,11 +24,24 @@ export default class SignUp extends Component {
             credentials: 'include'
         }).then((response) => response.json())
         .then((results) => {
-            console.log(results)
-        	//browserHistory.push("/login");
+        	browserHistory.push("/login");
         });
     }
 	componentWillMount(){
+        fetch('/api/signed-in', {
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'include'
+        }).then((response) => response.json())
+        .then((results) => {
+            if(results.message){
+                if(results.message !== "no req.user"){
+                    browserHistory.push("/home")
+                }
+            }
+        });
 	}
   	render() {
 	    return (

@@ -40,7 +40,7 @@ module.exports = function(passport) {
 		process.nextTick(function(){
 			models.User.findOne({where: {username: username}}).then(function(user){
 				if(user){
-					return done(null, false, {message: 'username taken'});
+					return done(null, false, req.flash('signupMessage', 'That username already taken'));
 				} else {
 	  				return models.User.create({
 	  					name: req.body.name,
