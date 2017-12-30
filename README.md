@@ -15,3 +15,7 @@
 
 * Install webpack (globally & locally per project)
 	* https://webpack.js.org/guides/installation/
+
+<h2> When Cloning </h2>
+
+* You will have conflicts with the bundle.js when cloning the repo and trying to run an app with the webpack and server. Just delete the bundle.js file and re-run your webpack (webpack -w). This will create a new bundle.js file.
