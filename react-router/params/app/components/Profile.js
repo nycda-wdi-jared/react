@@ -7,7 +7,7 @@ export default class Profile extends Component {
 	    return (
 	        <div>
 	        	<HomeButton />
-	          	<h1># {this.props.params.id}'s Profile Page</h1>
+	          	<h1># {this.props.match.params.id}'s Profile Page</h1>
 	        </div>
 	    );
   	}

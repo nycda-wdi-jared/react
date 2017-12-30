@@ -1,9 +1,9 @@
 // Include React
-var React = require("react");
-var {Link} = require('react-router');
+import React, {Component} from "react";
+import {Link} from 'react-router-dom';
 
-var Home = React.createClass({
-  	render: function() {
+export default class Home extends Component {
+  	render() {
 	  	var renderLinks = () => {
 	  		var arr = [1,2,3,4,5];
 	  		return arr.map((a, index) => {
@@ -23,6 +23,4 @@ var Home = React.createClass({
 	        </div>
 	    );
   	}
-});
-
-module.exports = Home;
+};

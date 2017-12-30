@@ -1,14 +1,13 @@
 // Include React
-var React = require("react");
+import React, {Component} from "react";
+import {Link} from 'react-router-dom';
 
-var PageNotFound = React.createClass({
-  render: function() {
+export default class PageNotFound extends Component {
+  render() {
     return (
         <div>
           <h1>Sorry, page not FOUND</h1>
         </div>
     );
   }
-});
-
-module.exports = PageNotFound;
+};

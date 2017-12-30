@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HomeButton from './HomeButton';
 
-export default class Profile extends Component {
+export default class Whatever extends Component {
   	render() {
 	    return (
 	        <div>
