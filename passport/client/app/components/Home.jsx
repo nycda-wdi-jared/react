@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import Logout from './Logout';
+
 export default class Home extends Component {
     constructor(props) {
         super(props);
@@ -33,6 +35,7 @@ export default class Home extends Component {
   				return (
   		      <nav className="navbar navbar-light bg-faded">
   						<Link className="nav-links" to="/home">Profile</Link>
+              <Logout />
   					</nav>
   				)
   			} else {

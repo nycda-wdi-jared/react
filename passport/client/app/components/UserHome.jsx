@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router';
 
+import Logout from './Logout';
+
 export default class UserHome extends Component {
     constructor(props) {
         super(props);
@@ -43,9 +45,7 @@ export default class UserHome extends Component {
 	        <div>
 	       		<nav className="navbar navbar-light bg-faded">
 					<Link className="nav-links" to="/">Home</Link>
-					<ul className="right">
-						<Link className="nav-links" onClick={this.logoutUser.bind(this)}>Logout</Link>
-					</ul>
+                    <Logout />
 				</nav>
 				<div className="text-center">
 		        	<h1>Welcome to React Passport {this.state.user.name}</h1>
