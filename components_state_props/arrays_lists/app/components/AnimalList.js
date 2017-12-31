@@ -5,6 +5,7 @@ import AnimalItem from './AnimalItem';
 
 export default class AnimalList extends React.Component {
   render() {
+    //console.log(this.props)
   	const { animals } = this.props;
   	const renderAnimals = () => {
   		return animals.map((animal, index) => {

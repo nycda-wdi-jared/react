@@ -18,4 +18,9 @@
 
 <h2> When Cloning </h2>
 
-* You will have conflicts with the bundle.js when cloning the repo and trying to run an app with the webpack and server. Just delete the bundle.js file and re-run your webpack (webpack -w). This will create a new bundle.js file.
+* You might have conflicts with the bundle.js when cloning the repo and trying to run an app with the webpack and server. Just delete the bundle.js file and re-run your webpack (webpack -w). This will create a new bundle.js file.
+
+<h2> No More jQuery </h2>
+
+* There is no need to have separate jQuery files anymore, as the babel transpiler makes react's js files able to handle all of the functionality that jQuery can.
+* So, like express handlebars, you can do javascript and html in the same file, but in react, it's a javascript file, not a handlebars file.

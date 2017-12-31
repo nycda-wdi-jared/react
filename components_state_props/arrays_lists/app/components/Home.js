@@ -7,6 +7,7 @@ import obj from './../../public/js/obj.js';
 
 export default class Home extends React.Component {
   render() {
+    //console.log(obj)
     return (
         <div>
           <h1>React List Structure</h1>
