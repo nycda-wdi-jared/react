@@ -24,3 +24,9 @@
 
 * There is no need to have separate jQuery files anymore, as the babel transpiler makes react's js files able to handle all of the functionality that jQuery can.
 * So, like express handlebars, you can do javascript and html in the same file, but in react, it's a javascript file, not a handlebars file.
+
+<h2> React Router </h2>
+
+* There are 2 different usages of react router throughout the lessons/exercises
+* One is a newer version that uses ```react-router-dom```, and an older version that uses ```react-router```
+* You'll be able to see a lot of differences, but just look in the routes.js file and see if ```react-router-dom``` or ```react-router``` is imported.
