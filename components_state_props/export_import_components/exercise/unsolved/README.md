@@ -3,6 +3,9 @@
 * Create a Header component (Header.js file) in the components Folder
 * In the component, create a simple bootstrap navbar
 * Import the component into the Home.js file, and add the nav above the header text
+* Run the app
+	* Open up one terminal and run ```npm start```
+	* Open up another terminal and run ```webpack -w```
 
 # Example React App
 
