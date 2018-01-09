@@ -49,8 +49,6 @@ export default class Home extends React.Component {
           <p>Name: {this.state.name}</p>
           <p>Num: {this.state.num}</p>
           <p onClick={this.changeAge.bind(this)}>Age (click me): {this.state.age}</p>
-          <Link to="/profile">Profile Page</Link><br></br>
-          <Link to="/whatever">Whatever Page</Link>
         </div>
     );
   }
