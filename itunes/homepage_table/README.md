@@ -1,3 +1,11 @@
+# iTunes Homepage Table
+
+* In this example, you will learn how to:
+	* Connect a server/database to a react app
+	* How to get the data from the server (node) to the client (react)
+	* How to append a table with information in React
+	* How to import/export components
+
 # Example React App
 
 <h2> Routing </h2>
