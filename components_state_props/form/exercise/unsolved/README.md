@@ -1,6 +1,9 @@
 # React Form Component Exercise
 
-Look at the comments in the Form.js & Home.js file
+* Look at the comments in the Form.js & Home.js file
+* Run the app
+	* Open up one terminal and run ```npm start```
+	* Open up another terminal and run ```webpack -w```
 
 # Example React App
 

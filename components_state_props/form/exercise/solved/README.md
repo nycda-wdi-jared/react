@@ -1,5 +1,8 @@
 # React Form Component Exercise
 
+* Run the app
+	* Open up one terminal and run ```npm start```
+	* Open up another terminal and run ```webpack -w```
 
 # Example React App
 
