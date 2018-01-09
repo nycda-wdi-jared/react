@@ -32,6 +32,7 @@
 * You'll be able to see a lot of differences, but just look in the routes.js file and see if ```react-router-dom``` or ```react-router``` is imported.
 
 <h2> .js vs .jsx </h2>
+
 * You will see some apps with .js files and some with .jsx files
 * React works with both, but people are moving towards .jsx
 * JSX was created to fit the react format of having html and javascript work together in the same file
