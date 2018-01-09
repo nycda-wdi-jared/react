@@ -30,3 +30,10 @@
 * There are 2 different usages of react router throughout the lessons/exercises
 * One is a newer version that uses ```react-router-dom```, and an older version that uses ```react-router```
 * You'll be able to see a lot of differences, but just look in the routes.js file and see if ```react-router-dom``` or ```react-router``` is imported.
+
+<h2> .js vs .jsx </h2>
+* You will see some apps with .js files and some with .jsx files
+* React works with both, but people are moving towards .jsx
+* JSX was created to fit the react format of having html and javascript work together in the same file
+* Works with both file types. You really won't see much of a difference.
+* Good read: https://github.com/airbnb/javascript/pull/985
