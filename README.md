@@ -1,5 +1,7 @@
 # React
 
+<h2> Please read this before moving on with repo </h2>
+
 <h2> Running React App </h2>
 
 * Open up two terminals
