@@ -8,13 +8,17 @@ export default class Form extends Component {
   }
   submitForm(e){
     e.preventDefault();
-
+    /* This is the section where you pass the values to the component that the form is being imported to */
     var formObj = {
       name: this.refs.name.value,
       username: this.refs.username.value,
       password: this.refs.password.value,
       confirmPassword: this.refs.confirmPassword.value
     }
+    /* 
+      this is the main point where the form data is being sent to another component 
+      look for formSubmit in the Home.js file
+    */
     this.props.formSubmit(formObj);
   }
   render() {

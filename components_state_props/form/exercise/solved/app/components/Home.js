@@ -6,22 +6,33 @@ export default class Home extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        name: '',
-        username: '',
         password: '',
         confirmPassword: ''
       };
   }
   formSubmitted(input){
     this.setState({
-      name: input.name,
-      username: input.username,
       password: input.password,
       confirmPassword: input.confirmPassword
     })
   }
   render() {
     console.log(this.state)
+    const { password, confirmPassword } = this.state;
+
+    const doPasswordsMatch = () => {
+      if(password !== "" && confirmPassword !== ""){
+        if(password === confirmPassword){
+          return (
+            <p>Passwords Match</p>
+          )
+        } else {
+          return (
+            <p>Passwords Do Not Match</p>
+          )  
+        }
+      }
+    }
     return (
         <div>
           <div className="text-center">
@@ -29,11 +40,7 @@ export default class Home extends Component {
             <Form formSubmit={this.formSubmitted.bind(this)}/>
           </div>
           <div>
-            <h1>Submitted Values</h1>
-            <p>Name: {this.state.name}</p>
-            <p>Username: {this.state.username}</p>
-            <p>Password: {this.state.password}</p>
-            <p>Confirmed Password: {this.state.confirmPassword}</p>
+            {doPasswordsMatch()}
           </div>
         </div>
     );

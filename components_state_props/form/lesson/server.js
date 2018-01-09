@@ -1,6 +1,5 @@
 // Include Server Dependencies
 var express = require("express");
-var bodyParser = require("body-parser");
 
 var path = require("path");
 
@@ -8,15 +7,6 @@ var path = require("path");
 var app = express();
 // Sets an initial port. We'll use this later in our listener
 var PORT = process.env.PORT || 3000;
-
-app.use(bodyParser.json({ limit: '50mb'}));
-app.use(bodyParser.urlencoded({
-  limit: '50mb',  
-  extended: true,   
-  parameterLimit:50000
-}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 

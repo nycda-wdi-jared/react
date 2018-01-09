@@ -1,3 +1,14 @@
+# React Form Component Importing
+
+* This is an example of how to have a form in one file and then be imported and called in another file.
+* The main files are in the components folder.
+* Run the app
+	* Open up one terminal and run ```npm start```
+	* Open up another terminal and run ```webpack -w```
+* Submit the form, and look at the console log
+* We are saving the results of the submitted form in the state
+	* If you are confused about state, then please view the ```state``` folder
+
 # Example React App
 
 1. Look at how the dots connect through the folder structure
