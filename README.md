@@ -40,3 +40,10 @@
 * JSX was created to fit the react format of having html and javascript work together in the same file
 * Works with both file types. You really won't see much of a difference.
 * Good read: https://github.com/airbnb/javascript/pull/985
+
+<h2> Package.json Dependencies & Dev Dependencies </h2>
+
+* You will see dependencies and dev dependencies in react package.jsons
+* To save regular dependencies is ```npm i --save``` & devDependencies is ```npm i --save-dev```
+* dev dependencies do not go to production, that's the main difference that I have seen.
+* https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies
