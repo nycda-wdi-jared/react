@@ -1,5 +1,12 @@
 # Example React App
 
+<h2> Running this app </h2>
+
+* Remember to open two terminals:
+	* You can run ```npm start``` in one from anywhere in the directory
+	* You have to run ```webpack -w``` from the main directory
+		* Make sure you have webpack installed: https://webpack.js.org/guides/installation/
+
 <h2> Routing </h2>
 
 * https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
