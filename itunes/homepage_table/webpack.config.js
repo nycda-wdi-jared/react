@@ -5,7 +5,7 @@ module.exports = {
   entry: './client/app/app.jsx',
   output: {
       path: __dirname,
-      filename: './client/public/bundle.js'
+      filename: './client/public/bundle/bundle.js'
   },
 
   // This section desribes the transformations we will perform
