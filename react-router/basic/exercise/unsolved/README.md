@@ -10,6 +10,7 @@
 
 <h2> Routing </h2>
 
+* https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
 * As you see in the routes.js file, all of the front-end/ui routing is done from the client side
 * This is where you define your routes that people will be able view and direct through the website
 * The back-end routes are merely for sending and receiving data. We will get to that soon.
