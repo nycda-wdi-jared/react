@@ -9,7 +9,12 @@ export default class Home extends React.Component {
           <h1>Hello World & Hello Puppy</h1>
           <img src="./images/puppy.jpg"/><br></br>
           <Link to="/profile">Profile Page</Link><br></br>
-          <Link to="/whatever">Whatever Page</Link>
+          <a 
+            className="waves-effect waves-light btn"
+            style={{}}
+          >
+            <Link style={{color: 'white'}} to="/whatever">Whatever Page</Link>
+          </a>
         </div>
     );
   }

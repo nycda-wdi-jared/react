@@ -2,7 +2,7 @@
 
 * Create 3 pages/components and have a footer nav on each page to put links in
 * Remember to use reacts Link import from react-router-dom
-* The ```<footer``` set to the bottom of the page is already set in the css.
+* The ```<footer>``` set to the bottom of the page is already set in the css.
 * In the footer of each page, have routes to the other 2 pages.
 * Remember to set your routes up in your routes.js page.
 

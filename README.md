@@ -13,6 +13,8 @@
 		* this will run your server, and you will open up your page on the local host and the port the server is running on, i.e. ```http://localhost:<PORT>```
 * Be sure both terminals are showing no errors and are running the localhost & webpack
 
+* In this package.json, you will see a different way of running everything in one terminal with the ```webpack-dev-server```: https://github.com/fizal619/redux-movie-search/blob/master/package.json
+
 <h2> Installing Webpack </h2>
 
 * Install webpack (globally & locally per project)

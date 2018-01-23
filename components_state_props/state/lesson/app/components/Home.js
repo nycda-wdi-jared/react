@@ -8,18 +8,20 @@ export default class Home extends React.Component {
     this.state = {
       name: '',
       age: 0,
-      num: 100
+      num: 100,
+      incNum: 0
     };
   }
   changeAge(){
     this.setState({
-      age: this.state.age + 1
+      age: this.state.age - 1
     })
   }
   componentWillMount(){
     setInterval(function(){
       this.setState({
-        num: this.state.num - 1
+        num: this.state.num - 1,
+        incNum: this.state.incNum + 1
       });
       if(this.state.num > 90){
         this.setState({
@@ -43,6 +45,7 @@ export default class Home extends React.Component {
   render() {
     console.log(this.state);
     return (
+      <div>
         <div>
           <h1>Hello World & Hello Puppy</h1>
           <img src="./images/puppy.jpg"/><br></br>
@@ -50,6 +53,14 @@ export default class Home extends React.Component {
           <p>Num: {this.state.num}</p>
           <p onClick={this.changeAge.bind(this)}>Age (click me): {this.state.age}</p>
         </div>
+        <div>
+          <h1>Hello World & Hello Puppy</h1>
+          <img src="./images/puppy.jpg"/><br></br>
+          <p>Name: {this.state.name}</p>
+          <p>Num: {this.state.incNum}</p>
+          <p onClick={this.changeAge.bind(this)}>Age (click me): {this.state.age}</p>
+        </div>
+      </div>
     );
   }
 };

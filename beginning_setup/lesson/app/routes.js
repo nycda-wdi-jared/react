@@ -7,6 +7,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home";
+import Whatever from "./components/Whatever";
 
 /*
 	this is where your routes are setup
@@ -15,5 +16,6 @@ import Home from "./components/Home";
 export default (
   	<Switch>
     	<Route exact path="/" component={Home} />
+    	<Route path="/whatever" component={Whatever} />
     </Switch>
 );

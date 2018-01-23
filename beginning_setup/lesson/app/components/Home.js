@@ -11,7 +11,7 @@ export default class Home extends Component {
   	*/
     return (
       <div>
-        <h1>Hello World & Hello Puppy</h1>
+        <h1 onClick={() => alert("hello")}>Hello World & Hello Puppy</h1>
         <img src="./images/puppy.jpg"/><br></br>
       </div>
     );
