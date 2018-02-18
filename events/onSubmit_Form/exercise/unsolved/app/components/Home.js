@@ -15,15 +15,6 @@ var Home = React.createClass({
     //console.log(password)
     //console.log(confirmPassword)
 
-    if(password === confirmPassword){
-      this.setState({
-        matched: 'Yes'
-      })
-    } else {
-      this.setState({
-        matched: 'No'
-      })
-    }
     /*
       Write your conditional comparing password & confirmPassword
 
