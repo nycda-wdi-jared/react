@@ -1,0 +1,44 @@
+
+h1 {
+	color: blue;
+	margin-left: 100px
+}
+
+.side-nav {
+	width: 300px;
+	background-color: #80deea
+}
+
+.logo {
+	width: 220px;
+	height: 100px;
+	margin-top: 0px
+
+}
+h3 {
+	font-size: 36px;
+	margin-bottom: 20px;
+	margin-left: 35px;
+	margin-top: 25px;
+}
+
+.carousel {
+	
+	margin-left: 225px;
+	margin-top: 20px;
+}
+
+
+.waves-effect {
+	height: 16px
+}
+
+.bold {
+	height: 50px
+}
+
+.divider {
+	width: 2px
+	padding-left: 10px;
+	opacity: 
+}
