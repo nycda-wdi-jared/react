@@ -10,7 +10,7 @@ module.exports = {
 
   // This section desribes the transformations we will perform
   module: {
-    loaders: [
+    rules: [
       {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
@@ -27,7 +27,6 @@ module.exports = {
     ]
   },
   resolve: {
-    root: __dirname,
-    extensions: ['', '.jsx', '.js']
+    extensions: ['.jsx', '.js']
   }
 };
