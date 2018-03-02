@@ -1,7 +1,7 @@
 var path = require('path');
 
 var LocalStrategy = require('passport-local').Strategy;
-var bcrypt = require('bcrypt-nodejs');
+var bcrypt = require('bcryptjs');
 
 var models = require('../models');
 
@@ -62,6 +62,18 @@ module.exports = (app, passport) => {
 		req.session.destroy(function(){
 			res.status(204).send();
 		});
+	});
+
+	app.post('/api/new-password', (req, res) => {
+		models.User.findOne({where: {id: req.user.id}}).then((user)=> {
+	        if(bcrypt.compareSync(req.body.currentPassword, user.get('password_hash'))){
+	        	var salt = bcrypt.genSaltSync(10);
+				var hashedPassword = bcrypt.hashSync(req.body.newPassword, salt);
+	        	models.User.update({password_hash: hashedPassword, salt: salt},{where:{id: req.user.id}}).then((response) => {
+	        		res.status(200).json({message: 'Password Successfully Changed'});
+	        	})
+	        }
+		})
 	});
 
 	app.get('*', function(req,res){
