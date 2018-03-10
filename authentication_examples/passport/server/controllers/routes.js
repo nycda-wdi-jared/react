@@ -4,7 +4,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
 
 var models = require('../models');
-var html_creator = require('./html_creator.js');
+var html_creator = require('./../helpers/html_creator.js');
 
 var nodemailer = require("nodemailer");
 const uuidv4 = require('uuid/v4');
