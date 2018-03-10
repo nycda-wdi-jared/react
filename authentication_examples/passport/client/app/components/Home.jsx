@@ -51,7 +51,7 @@ export default class Home extends Component {
 	        <div>
 	        	{renderLinks()}
 				    <div className="text-center">
-		        	<h1>Hello Passport With New Webpack</h1>
+		        	<h1>Hello Passport</h1>
 		        	<h2>Please Sign up or Sign in</h2>
 		        </div>
 	        </div>

@@ -5,6 +5,7 @@ export default class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            submitButtonDisabled: false
         };
     }
     signInForm(e){
@@ -29,6 +30,30 @@ export default class SignIn extends Component {
             }
         });
     }
+    changePasswordForm(e){
+        e.preventDefault();
+        this.setState({
+            submitButtonDisabled: true
+        })
+        fetch('/api/forgot-password', {
+            method: 'post',
+            body: JSON.stringify({email: this.refs.email.value}),
+            headers: {
+                'content-type': 'application/json',
+                'accept': 'application/json'
+            },
+            credentials: 'same-origin'
+        }).then((response) => response.json())
+        .then((results) => {
+            console.log(results)
+            this.setState({
+                submitButtonDisabled: false
+            })
+            $(document).ready(function(){
+                $('.modal').modal('close');
+            });
+        });
+    }
 	componentWillMount(){
         fetch('/api/signed-in', {
             headers: {
@@ -42,6 +67,10 @@ export default class SignIn extends Component {
                 browserHistory.push("/home")
             }
         });
+
+        $(document).ready(function(){
+            $('.modal').modal();
+        })
 	}
   	render() {
 	    return (
@@ -62,7 +91,22 @@ export default class SignIn extends Component {
 							<input className="btn btn-danger" type="submit" />
 						</form>
 					</div>
+                    <a href="#modal1">Forgot Password?</a>
 				</div>
+                <div id="modal1" className="modal">
+                    <div className="modal-content">
+                        <form onSubmit={this.changePasswordForm.bind(this)}>
+                            <h3>Forgot Password? Provide Email</h3>
+                            <label>Email</label>
+                            <input type="text" ref="email"/>
+                            <input 
+                                type="submit" 
+                                disabled={this.state.submitButtonDisabled} 
+                                className="btn btn-info"
+                            />
+                        </form>
+                    </div>
+                </div>
 	        </div>
 	    );
   	}

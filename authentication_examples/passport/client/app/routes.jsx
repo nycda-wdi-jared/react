@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import UserHome from "./components/UserHome";
+import ForgotPassword from "./components/ForgotPassword";
 
 import PageNotFound from "./components/PageNotFound";
 
@@ -17,6 +18,7 @@ export default (
     	<Route path="/login" component={SignIn} />
     	<Route path="/sign-up" component={SignUp} />
     	<Route path="/home" component={UserHome} />
+    	<Route path="/forgot-password/:uuid" component={ForgotPassword} />
     	<Route path="*" component={PageNotFound} />
     </Route>
 );

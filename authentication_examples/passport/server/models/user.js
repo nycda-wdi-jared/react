@@ -11,6 +11,17 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			unique: true
 		},
+		email: {
+			type: DataTypes.STRING,
+			unique: true,
+			validate: {
+				isEmail: true
+			}
+		},
+		uuid: {
+			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV4
+		},
 		salt: {
 			type: DataTypes.STRING
 		},

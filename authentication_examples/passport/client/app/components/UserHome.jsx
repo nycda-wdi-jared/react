@@ -38,14 +38,13 @@ export default class UserHome extends Component {
                 credentials: 'same-origin'
             }).then((response) => response.json())
             .then((results) => {
-                console.log(results)
+                $(document).ready(function(){
+                    $('.modal').modal('close');
+                });
             });
         } else {
             alert('New Passwords Do Not Match');
         }
-        $(document).ready(function(){
-            $('.modal').modal('close');
-        })
     }
 	componentWillMount(){
         fetch('/api/signed-in', {

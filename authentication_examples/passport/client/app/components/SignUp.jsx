@@ -9,23 +9,28 @@ export default class SignUp extends Component {
     }
     signUpForm(e){
     	e.preventDefault();
-    	var newUser = {
-    		name: this.refs.name.value,
-    		username: this.refs.username.value,
-    		password: this.refs.password.value
-    	}
-        fetch('/api/sign-up', {
-            method: 'post',
-            body: JSON.stringify(newUser),
-            headers: {
-                'content-type': 'application/json',
-                'accept': 'application/json'
-            },
-            credentials: 'same-origin'
-        }).then((response) => response.json())
-        .then((results) => {
-        	browserHistory.push("/login");
-        });
+        if(this.refs.password.value === this.refs.confirmPassword.value){
+        	var newUser = {
+        		name: this.refs.name.value,
+                email: this.refs.email.value,
+        		username: this.refs.username.value,
+        		password: this.refs.password.value
+        	}
+            fetch('/api/sign-up', {
+                method: 'post',
+                body: JSON.stringify(newUser),
+                headers: {
+                    'content-type': 'application/json',
+                    'accept': 'application/json'
+                },
+                credentials: 'same-origin'
+            }).then((response) => response.json())
+            .then((results) => {
+            	browserHistory.push("/login");
+            });
+        } else {
+            alert('Passwords do not match')
+        }
     }
 	componentWillMount(){
         fetch('/api/signed-in', {
@@ -59,8 +64,12 @@ export default class SignUp extends Component {
 							<input type="text" ref="name" /><br></br>
 							<label>Username</label><br></br>
 							<input type="text" ref="username" /><br></br>
+                            <label>Email</label><br></br>
+                            <input type="text" ref="email" /><br></br>
 							<label>Password</label><br></br>
 							<input type="password" ref="password"/><br></br>
+                            <label>Confirm Password</label><br></br>
+                            <input type="password" ref="confirmPassword"/><br></br>
 							<input className="btn btn-danger" type="submit" />
 						</form>
 					</div>
