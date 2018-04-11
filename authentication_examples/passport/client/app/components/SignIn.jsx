@@ -107,6 +107,14 @@ export default class SignIn extends Component {
                         </form>
                     </div>
                 </div>
+                <div className="text-center" id="github_signin">
+                    <a href="/auth/github">
+                        <img
+                            src="./github.png"
+                            style={{height: '50px', width: 'auto'}}
+                        />
+                    </a>
+                </div>
 	        </div>
 	    );
   	}

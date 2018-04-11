@@ -1,6 +1,7 @@
 var models = require('../models');
 
 var LocalStrategy = require('passport-local').Strategy;
+var GitHubStrategy = require('passport-github').Strategy;
 var bcrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport) {
@@ -51,10 +52,35 @@ module.exports = function(passport) {
 	  					return done(null, newUser)
 						}).catch(function(err){
 							console.error(err);
-						});
+						})
 				};
 	  		});
 	    });
 	}));
+
+	passport.use('github', new GitHubStrategy({
+	    clientID: '3a095afa45f3f60bdeb2',
+	    clientSecret: '885b8bd464b4f83afaede24a53f896927b3bf0f6',
+	    callbackURL: "http://localhost:8000/auth/github/callback"
+	},
+	function(accessToken, refreshToken, profile, done) {
+			models.User.findOne({where: { githubId: profile.id }}).then(function(user){
+				if(user){
+					return done(null, user);
+				} else {
+	  				return models.User.create({
+	  					name: profile.displayName,
+	  					githubId: profile.id,
+	  					email: profile.emails[0].value,
+	  					username: profile.username
+	  				}).then(function(newUser){
+	  					return done(null, newUser)
+						}).catch(function(err){
+							console.error(err);
+						})
+				};
+	  		});
+		}
+	));
 
 }

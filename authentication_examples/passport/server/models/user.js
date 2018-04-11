@@ -9,14 +9,20 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		username: {
 			type: DataTypes.STRING,
-			unique: true
+			unique: true,
+			allowNull: false
 		},
 		email: {
 			type: DataTypes.STRING,
 			unique: true,
+			allowNull: false,
 			validate: {
 				isEmail: true
 			}
+		},
+		githubId: {
+			type: DataTypes.STRING,
+			unique: true
 		},
 		uuid: {
 			type: DataTypes.UUID,
@@ -27,11 +33,9 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		password_hash: {
 			type: DataTypes.STRING,
-			allowNull: false
 		},
 		password: {
 			type: DataTypes.VIRTUAL,
-			allowNull: false,
 			validate: {
 				len: [7, 100]
 			},

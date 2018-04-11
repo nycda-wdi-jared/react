@@ -37,6 +37,40 @@ module.exports = (app, passport) => {
 		})(req, res, next);
 	});
 
+	app.get('/auth/github', function(req,res,next){
+		passport.authenticate('github', function(err, user, info){
+		    if (err) {
+		      	return next(err);
+		    }
+		    if (!user) {
+		    	res.redirect('/login');
+		    }
+		    req.login(user, function(err){
+				if(err){
+					return next(err);
+				}
+		      	res.redirect('/home');        
+			});
+	  	})(req, res, next);
+	});
+
+	app.get('/auth/github/callback', function(req,res,next){
+		passport.authenticate('github', function(err, user, info){
+		    if (err) {
+		      	return next(err);
+		    }
+		    if (!user) {
+		    	res.redirect('/login');
+		    }
+		    req.login(user, function(err){
+				if(err){
+					return next(err);
+				}
+				res.redirect('/home'); 
+			});
+	  	})(req, res, next);
+	});
+
 	app.post('/api/sign-in', function(req,res,next){
 		passport.authenticate('local-signin', function(err, user, info){
 		    if (err) {
