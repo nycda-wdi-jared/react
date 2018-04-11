@@ -59,8 +59,8 @@ module.exports = function(passport) {
 	}));
 
 	passport.use('github', new GitHubStrategy({
-	    clientID: '3a095afa45f3f60bdeb2',
-	    clientSecret: '885b8bd464b4f83afaede24a53f896927b3bf0f6',
+	    clientID: process.env.GITHUB_CLIENT_ID,
+	    clientSecret: process.env.GITHUB_SECRET,
 	    callbackURL: "http://localhost:8000/auth/github/callback"
 	},
 	function(accessToken, refreshToken, profile, done) {
