@@ -1,0 +1,14 @@
+h2 {
+  color: yellow; }
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333; }
+
+.testing {
+  width: 71.42857%; }
+
+.whatever {
+  width: 500px;
+  opacity: 0.5;
+  height: 300px; }

@@ -4,6 +4,17 @@ var bodyParser = require("body-parser");
 var path = require("path");
 
 var app = express();
+const { exec } = require('child_process');
+exec('gulp', (err, stdout, stderr) => {
+  if (err) {
+    // node couldn't execute the command
+    return;
+  }
+
+  // the *entire* stdout and stderr (buffered)
+  console.log(`stdout: ${stdout}`);
+  // console.log(`stderr: ${stderr}`);
+});
 
 var PORT = process.env.PORT || 3000;
 
